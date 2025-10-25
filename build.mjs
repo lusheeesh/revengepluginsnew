@@ -3,6 +3,7 @@ import { extname } from "path";
 import { createHash } from "crypto";
 
 import { rollup } from "rollup";
+import url from "@rollup/plugin-url";
 import esbuild from "rollup-plugin-esbuild";
 import commonjs from "@rollup/plugin-commonjs";
 import nodeResolve from "@rollup/plugin-node-resolve";
@@ -14,6 +15,10 @@ const extensions = [".js", ".jsx", ".mjs", ".ts", ".tsx", ".cts", ".mts"];
 const plugins = [
     nodeResolve(),
     commonjs(),
+    url({
+        include: ["**/*.svg", "**/*.png", "**/*.jpg", "**/*.gif"],
+        limit: 0, // inline files below this size (0 = never inline)
+    }),
     {
         name: "swc",
         async transform(code, id) {
