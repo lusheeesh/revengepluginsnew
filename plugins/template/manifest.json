@@ -1,10 +1,10 @@
 {
-    "name": "Template Plugin",
-    "description": "A plugin for use as a template.",
+    "name": "MP3ToVoiceNote",
+    "description": "A plugin that accurately changes MP3 to VoiceNote.",
     "authors": [
         {
-            "name": "You!",
-            "id": "YOUR_ID_HERE"
+            "name": "Lushy",
+            "id": "1332944514322792518"
         }
     ],
     "main": "src/index.ts",
